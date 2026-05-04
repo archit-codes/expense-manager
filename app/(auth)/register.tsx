@@ -32,7 +32,7 @@ const Register = () => {
             nameRef.current
         );
         setIsLoading(false);
-        console.log('registration response:', res);
+        // console.log('registration response:', res);
         if(!res.success){
             Alert.alert("Sign Up", res.msg);
         }

@@ -21,7 +21,8 @@ export type ScreenWrapperProps = {
     children: ReactNode;
 };
 
-export type NodeWrapperProps = {
+
+export type ModalWrapperProps = {
     style?: ViewStyle;
     children: ReactNode;
     bg?: string;
@@ -33,6 +34,7 @@ export type accountOptionType = {
     bgColor: string;
     routeName?: any;
 };
+
 
 export type TypoProps = {
     size?:number;
@@ -100,4 +102,72 @@ export type AuthContextType = {
         name: string
     ) => Promise<{ success: boolean; msg?: string }>;
     updateUserData: (userId: string) => Promise<void>;
+};
+
+export type HeaderProps = {
+    title?: string;
+    style?: ViewStyle;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
+};
+
+export type IconProps = {
+    name: string;
+    color?: string;
+    size?: number;
+    strokeWidth?: number;
+    fill?:  string;
+};
+
+export type ResponseType = {
+    success: boolean;
+    data?: any;
+    msg?: string;
+};
+
+export type WalletType = {
+    id?: string;
+    name: string;
+    amount?: number;
+    totalIncome?: number;
+    totalExpenses?: number;
+    image: any;
+    uid?: string;
+    created?: Date;
+};
+
+export type TransactionType = {
+    id?: string;
+    type: string;
+    amount: number;
+    category?: string;
+    date: Date | Timestamp | string;
+    description?: string;
+    image?: any;
+    uid?: string;
+    walletId: string;
+}
+
+export type CategoryType ={
+    label: string;
+    value: string;
+    icon: Icon;
+    bgColor: string;
+};
+
+export type ExpenseCategoriesType = {
+    [key: string]: CategoryType;
+}
+
+export type TransactionListType = {
+    data: TransactionType[];
+    title?: string;
+    loading?: boolean;
+    emptyListMessage?: string;
+};
+
+export type TransactionItemProps = {
+    item: TransactionType;
+    index: number;
+    handleClick: Function;
 };
