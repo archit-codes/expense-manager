@@ -1,50 +1,286 @@
-# Welcome to your Expo app 👋
+# Expense Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern cross-platform expense management mobile application built using **React Native (Expo)** and **TypeScript**, designed to simplify personal financial tracking through real-time transaction management, wallet-based budgeting, analytics, and media-supported expense records.
 
-## Get started
+The application enables users to manage income and expenses efficiently with categorized transactions, wallet management, receipt storage, real-time updates, and visual analytics.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+### Authentication
+- User Registration
+- User Login
+- Secure authentication using Firebase Authentication
+- Welcome onboarding flow
+- Logout support
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+### Dashboard & Financial Overview
+- Real-time balance tracking
+- Total income overview
+- Total expense overview
+- Complete transaction history
+- Search functionality across transactions
+- Responsive transaction rendering
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Transaction Management
+Create, manage, and organize financial records.
 
-## Get a fresh project
+Supported operations:
+- Create transaction
+- Update transaction
+- Delete transaction
+- Income / Expense selection
+- Transaction date support
+- Receipt upload
+- Receipt editing
 
-When you're ready, run:
+Expense categories include:
 
-```bash
-npm run reset-project
+- Grocery
+- Rent
+- Utilities
+- Transportation
+- Entertainment
+- Dining
+- Health
+- Insurance
+- Savings
+- Clothing
+- Personal
+- Others
+
+---
+
+### Wallet Management
+Manage multiple financial sources inside the application.
+
+Capabilities:
+- Create wallet
+- Edit wallet
+- Delete wallet
+- Wallet icon upload
+- Multiple wallet support
+- Dynamic wallet balance updates
+
+---
+
+### Statistics & Analytics
+Track spending behavior using visual insights.
+
+Features:
+- Weekly statistics
+- Monthly statistics
+- Yearly statistics
+- Combined Income + Expense visualization
+- Interactive bar charts
+- Segmented analytics views
+
+---
+
+### Profile Management
+Personalize account information.
+
+Supported features:
+- Update profile name
+- Upload profile picture
+- Real-time profile updates
+- Logout functionality
+
+---
+
+### Media Support
+Cloud-based asset handling using Cloudinary.
+
+Supports:
+- Profile images
+- Wallet icons
+- Transaction receipts
+- Receipt updates
+
+---
+
+## Tech Stack
+
+### Mobile Development
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+
+### Backend & Database
+- Firebase Authentication
+- Firebase Firestore
+
+### Media Management
+- Cloudinary
+
+### State Management
+- React Hooks
+- Context API
+
+### UI & Performance
+- React Native Reanimated
+- React Native Gifted Charts
+- React Native Segmented Control
+- FlatList
+- FlashList
+
+---
+
+## Application Architecture
+
+### Navigation Structure
+
+```plaintext
+Welcome
+ ├── Login
+ └── Register
+
+Main App
+ ├── Home
+ ├── Statistics
+ ├── Wallet
+ └── Profile
+
+Modals
+ ├── Search
+ ├── Transaction
+ ├── Wallet
+ └── Profile
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Folder Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```plaintext
+Expense Manager
+│
+├── app
+│   ├── (auth)
+│   │   ├── login.tsx
+│   │   ├── register.tsx
+│   │   └── welcome.tsx
+│   │
+│   ├── (modals)
+│   │   ├── profileModal.tsx
+│   │   ├── searchModal.tsx
+│   │   ├── transactionModal.tsx
+│   │   └── walletModal.tsx
+│   │
+│   ├── (tabs)
+│   │   ├── index.tsx
+│   │   ├── statistics.tsx
+│   │   ├── wallet.tsx
+│   │   ├── profile.tsx
+│   │   └── _layout.tsx
+│   │
+│   ├── index.tsx
+│   └── _layout.tsx
+│
+├── assets
+│   └── images
+│
+├── components
+├── config
+├── constants
+├── contexts
+├── hooks
+├── services
+├── utils
+│
+├── types.ts
+├── app.json
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## Installation
 
-Join our community of developers creating universal apps.
+### Clone Repository
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+git clone <repository-url>
+cd expense-manager
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+
+Create:
+
+```plaintext
+.env
+```
+
+Add:
+
+```env
+EXPO_PUBLIC_FIREBASE_API_KEY=
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+EXPO_PUBLIC_FIREBASE_APP_ID=
+
+EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME=
+EXPO_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
+```
+
+---
+
+### Start Development Server
+
+```bash
+npx expo start
+```
+
+---
+
+## Screens Included
+
+### Authentication
+- Welcome
+- Login
+- Register
+
+### Main Screens
+- Home
+- Statistics
+- Wallet
+- Profile
+
+### Modal Screens
+- Search
+- Transaction
+- Wallet
+- Profile
+
+---
+
+## Future Enhancements
+
+- Export financial reports
+- Budget goals
+- Notification reminders
+- Advanced analytics
+- Multi-currency support
+
+---
+
+## License
+
+This project is developed for learning, experimentation, and portfolio purposes.
